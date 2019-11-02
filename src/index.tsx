@@ -62,7 +62,7 @@ const fetchReducer = (state: FetchState, action: FetchAction) => {
   }
 };
 
-export function useFetch(url: string, config?: RequestInit) {
+function useFetch(url: string, config?: RequestInit) {
   // skip state updates if the component unmount
   const shouldCancel = React.useRef(false);
 
@@ -103,3 +103,5 @@ export function useFetch(url: string, config?: RequestInit) {
 
   return state;
 }
+
+export default useFetch;
